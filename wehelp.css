@@ -1,0 +1,176 @@
+:root{
+    /* 宣告：--名稱: 值; */
+    --h1-color: #ffffff;    
+    --p-color: #006;    
+    --sub-color: #ffffffb3; 
+    --content-max-weight: 1200px;   
+    --content-weight: 85vw;
+    --content-sub-weight: 85vw;
+    --nav-color: #333;
+    --nav-bg-color: #bbcf47;
+    --margin-left: 64px;
+}
+
+/* LayOut Template */
+body{
+    margin: 0px;  /* 清除預設的 margin */
+    overflow-x: hidden;  /* 隱藏橫向滾動條 */
+    box-sizing: border-box;
+    font-size: large;
+    color: var(--sub-color);
+    background-color: #000000;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Fira Sans', Ubuntu, Oxygen, 'Oxygen Sans', Cantarell, 'Droid Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+
+nav{
+    position: fixed;
+    top:0;
+    width: 100vw;height: 50px;
+    background-color: var(--nav-bg-color);
+    z-index: 10;
+}
+
+header{
+    width: var(--content-weight);
+    max-width: var(--content-max-weight);
+    margin: 100px auto 60px 64px;
+    color: var(--h1-color);
+}
+
+footer{
+    padding-top: 50px;
+    font-size: 18px;
+    text-align: center;
+}
+ul{display: flex; margin: 0px; padding: 0px;}  /* 使 li 水平排列 */
+li{list-style: none; text-align: left;}
+
+a{text-decoration: none;}
+a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+    color: var(--sub-color);
+}
+
+icon{color: var(--sub-color)}
+
+p{line-height:1.8;}
+
+button{font-size: 14px;}
+
+.sub-title{
+    padding-left: 8px;
+    color: var(--sub-color);
+    border-left: var(--sub-color) solid 2px;
+}
+
+.wInherit{width: inherit;}
+
+/* nav */
+.nav-bar{
+    width: 80vw;
+    display: flex;
+    justify-content:space-between; 
+}
+.nav-lists{
+    li{
+        min-width: 50px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    li:hover{
+        transform: scale(1.1);
+    }
+}
+.nav-login{
+    li{
+        width: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        margin-right: 16px;
+        a{color: var(--nav-color);}
+    }
+    li:hover{
+        transform: scale(1.1);
+    }
+}
+
+/* content */
+.content{
+    width: var(--content-weight);
+    max-width: var(--content-max-weight);
+    margin: 32px auto 65px var(--margin-left);
+}
+
+.content-sub{margin: 0px 24px 32px 24px;}
+
+
+/* drop down */
+.dropBtn{
+    background-color: #333;
+    color: white;
+    padding: 14px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* footer */
+footer{
+    height:100px;width: 100vw;
+    background-color: #42d392;
+}
+
+/* feature */
+.center{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+.accent{
+    background: -webkit-linear-gradient(315deg,#42d392 25%,#c99320);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent
+}
+
+.keyword{
+    font-size: 24px; font-weight: bold;
+    color: #0a66c2;
+    padding: 0 10px;
+}
+.display-type {display: none;}
+
+.height-type{height: unset;}
+
+
+/* RWD */
+.mod-desktop{display: block;}
+.mod-mobile{display: block;}
+
+
+
+/* @media 順序很重要 */
+@media(max-width:1250px){
+    /* 桌機螢幕最小 1280px */
+    /* 平板螢幕設定 */
+    /* 幕寬度小於 1250px，套用這個區塊的CSS */
+    
+}
+
+@media(max-width:500px){
+    /* 幕寬度小於 500px，套用這個區塊的CSS */
+    /* 最小的手機 360px */
+    .mod-desktop{display: none;}
+    .nav-lists{
+        margin-top: 10px;
+        li{
+            width:12%;
+        }
+        li:hover{
+            width:35%;
+        }
+    }
+}
