@@ -107,16 +107,6 @@ button{font-size: 14px;}
 .content-sub{margin: 0px 24px 32px 24px;}
 
 
-/* drop down */
-.dropBtn{
-    background-color: #333;
-    color: white;
-    padding: 14px 20px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
 /* footer */
 footer{
     height:100px;width: 100vw;
@@ -136,8 +126,23 @@ footer{
     -webkit-text-fill-color: transparent
 }
 
+.btn{
+    width: 90px;height: 10px;
+    border-radius: 24px;
+    background-color: #333;
+    padding: 14px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    justify-content: space-between;
+}
+.btn:hover{
+    transform: scale(1.01);
+}
+
 .keyword{
-    font-size: 24px; font-weight: bold;
+    font-style:oblique;
+    font-size: 18px; font-weight: bold;
     color: #0a66c2;
     padding: 0 10px;
 }
