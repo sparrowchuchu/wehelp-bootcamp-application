@@ -1,23 +1,21 @@
 :root{
     /* 宣告：--名稱: 值; */
     --h1-color: #ffffff;    
-    --p-color: #006;    
-    --sub-color: #ffffffb3; 
+    --color: #ffffffe0; 
     --content-max-weight: 1200px;   
     --content-weight: 85vw;
-    --content-sub-weight: 85vw;
     --nav-color: #333;
     --nav-bg-color: #bbcf47;
     --margin-left: 64px;
+    --drop-weight: 200px;
 }
 
-/* LayOut Template */
 body{
-    margin: 0px;  /* 清除預設的 margin */
+    margin: 0px;
     overflow-x: hidden;  /* 隱藏橫向滾動條 */
     box-sizing: border-box;
     font-size: large;
-    color: var(--sub-color);
+    color: var(--color);
     background-color: #000000;
     font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Fira Sans', Ubuntu, Oxygen, 'Oxygen Sans', Cantarell, 'Droid Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
@@ -25,7 +23,7 @@ body{
 nav{
     position: fixed;
     top:0;
-    width: 100vw;height: 50px;
+    width: 100vw; height: 50px;
     background-color: var(--nav-bg-color);
     z-index: 10;
 }
@@ -33,25 +31,29 @@ nav{
 header{
     width: var(--content-weight);
     max-width: var(--content-max-weight);
-    margin: 100px auto 60px 64px;
+    margin: 100px auto 60px var(--margin-left);
     color: var(--h1-color);
 }
 
 footer{
+    height:100px; width: 100vw;
+    background-color: #42d392;
     padding-top: 50px;
     font-size: 18px;
     text-align: center;
 }
+
 ul{display: flex; margin: 0px; padding: 0px;}  /* 使 li 水平排列 */
 li{list-style: none; text-align: left;}
 
-a{text-decoration: none;}
-a:hover, a:visited, a:link, a:active {
+a{
     text-decoration: none;
-    color: var(--sub-color);
+    &:hover, &:visited, &:link, &:active {
+        text-decoration: none;
+        color: var(--color);
+    }
 }
 
-icon{color: var(--sub-color)}
 
 p{line-height:1.8;}
 
@@ -59,43 +61,42 @@ button{font-size: 14px;}
 
 .sub-title{
     padding-left: 8px;
-    color: var(--sub-color);
-    border-left: var(--sub-color) solid 2px;
+    color: var(--color);
+    border-left: var(--color) solid 2px;
 }
 
-.wInherit{width: inherit;}
 
 /* nav */
 .nav-bar{
-    width: 80vw;
+    width: 90vw;
     display: flex;
     justify-content:space-between; 
 }
-.nav-lists{
+.nav-logo{
     li{
         min-width: 50px;
         display: flex;
         align-items: center;
         cursor: pointer;
     }
-    li:hover{
-        transform: scale(1.1);
-    }
+    li:hover{transform: scale(1.1);}
 }
-.nav-login{
+.nav-lists{
     li{
-        width: 150px;
+        width: 130px;
         display: flex;
         justify-content: center;
         align-items: center;
         cursor: pointer;
         margin-right: 16px;
-        a{color: var(--nav-color);}
+        a{
+            font-weight: bold;
+            color: var(--nav-color);
+        }
     }
-    li:hover{
-        transform: scale(1.1);
-    }
+    li:hover{transform: scale(1.1);}
 }
+
 
 /* content */
 .content{
@@ -107,18 +108,13 @@ button{font-size: 14px;}
 .content-sub{margin: 0px 24px 32px 24px;}
 
 
-/* footer */
-footer{
-    height:100px;width: 100vw;
-    background-color: #42d392;
-}
-
 /* feature */
 .center{
     display: flex; 
     justify-content: center;
     align-items: center;
 }
+
 .accent{
     background: -webkit-linear-gradient(315deg,#42d392 25%,#c99320);
     background-clip: text;
@@ -127,9 +123,9 @@ footer{
 }
 
 .btn-a{
-    width: 90px;height: 10px;
+    width: 90px; height: 10px;
     border-radius: 24px;
-    background-color: #333;
+    background-color: var(--nav-color);
     padding: 14px;
     font-size: 16px;
     border: none;
@@ -146,15 +142,61 @@ footer{
     color: #0a66c2;
     padding: 0 10px;
 }
-.display-type {display: none;}
 
-.height-type{height: unset;}
+/* drop SCSS*/
+/* sass的语法 &符號 表示父級選擇器，意思與this一样*/
+.drop {
+    position: relative;
+    display: block;
+    width: var(--drop-weight);
+    &:hover {
+        .dropOption {display: block;}
+        .dropdown {display: block;}
+        .dropdown.close {display: none;}
+        background-color: rgb(73, 73, 73);
+        border-radius: 6px 6px 0px 0px;
+    }
+    .dropOption {
+        position: relative;
+        left: calc(var(--drop-weight) - 60px);
+        width: auto;
+        color: var(--nav-color);
+        font-weight: bold;
+        padding: 10px;
+        cursor: pointer;
+    }
+    .dropdown {
+        display: none;
+        width: var(--drop-weight);
+        position: absolute;
+        color: var(--nav-color);  
+        margin: 0; padding: 0;
+        background-color: rgb(73, 73, 73);
+        box-shadow: 0px 2px 3px 0px #2c2c2c;
+        border-radius: 0px 0px 6px 6px;
+        box-sizing: border-box;
+        overflow: auto;
+        z-index: 10;
+        li {
+            display: block;
+            margin: 0 10px; padding: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            &:first-child {margin-top: 10px;}
+            &:last-child {margin-bottom: 10px;}
+            &:hover {
+                a{color: var(--nav-color);}
+                background-color: var(--nav-bg-color);
+                border-radius: 6px;
+            }
+        }
+    }
+}
 
 
 /* RWD */
-.mod-desktop{display: block;}
-.mod-mobile{display: block;}
-
+.mod-desktop{display: flex;}
+.mod-mobile{display: none;}
 
 
 /* @media 順序很重要 */
@@ -162,20 +204,17 @@ footer{
     /* 桌機螢幕最小 1280px */
     /* 平板螢幕設定 */
     /* 幕寬度小於 1250px，套用這個區塊的CSS */
-    
+    header{margin-left: calc(var(--margin-left) / 2);}
+    .mod-desktop{display: none;}
+    .mod-mobile{display: block;}
+    .content{margin-left: calc(var(--margin-left) / 2);}
 }
 
 @media(max-width:500px){
     /* 幕寬度小於 500px，套用這個區塊的CSS */
     /* 最小的手機 360px */
+    header{margin-left: 20px;}
     .mod-desktop{display: none;}
-    .nav-lists{
-        margin-top: 10px;
-        li{
-            width:12%;
-        }
-        li:hover{
-            width:35%;
-        }
-    }
+    .mod-mobile{display: flex;}
+    .content{margin-left: calc(var(--margin-left) / 4);}
 }

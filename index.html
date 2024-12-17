@@ -9,17 +9,17 @@
 <body>
     <nav class="center">
         <div class="nav-bar">
-            <ul class="nav-lists">
+            <ul class="nav-logo">
                 <li>
                     <a href="/wehelp-bootcamp-application/"><?xml version="1.0" encoding="UTF-8"?><svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 18V42H39V18L24 6L9 18Z" fill="none" stroke="#333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 29V42H29V29H19Z" fill="none" stroke="#333" stroke-width="4" stroke-linejoin="round"/><path d="M9 42H39" stroke="#333" stroke-width="4" stroke-linecap="round"/></svg></a>
                 </li>
             </ul>
-            <ul class="nav-login">
+            <ul class="mod-desktop nav-lists">
                 <li>
                     <a href="#a">簡介和申請動機</a>
                 </li>
                 <li>
-                    <a href="#b">相關的學習</a>
+                    <a href="#b">相關學習</a>
                 </li>
                 <li>
                     <a href="#c">學習時間安排</a>
@@ -34,12 +34,45 @@
                     <a href="#f">開發技術心得</a>
                 </li>
                 <li>
-                    <a href="#g">與社群的連結</a>
+                    <a href="#g">工作與社會群體</a>
                 </li>
                 <li>
                     <a href="#h">其他想說的事</a>
                 </li>
             </ul>
+            <div class="mod-mobile drop">
+                <div class="dropOption">
+                    <span>
+                        <?xml version="1.0" encoding="UTF-8"?><svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.94971 11.9497H39.9497" stroke="#333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.94971 23.9497H39.9497" stroke="#333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.94971 35.9497H39.9497" stroke="#333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </span>
+                </div>
+                <ul class="dropdown">
+                    <li>
+                        <a href="#a">簡介和申請動機</a>
+                    </li>
+                    <li>
+                        <a href="#b">相關學習</a>
+                    </li>
+                    <li>
+                        <a href="#c">學習時間安排</a>
+                    </li>
+                    <li>
+                        <a href="#d">投入與回報</a>
+                    </li>
+                    <li>
+                        <a href="#e">情緒處理</a>
+                    </li>
+                    <li>
+                        <a href="#f">開發技術心得</a>
+                    </li>
+                    <li>
+                        <a href="#g">工作與社會群體</a>
+                    </li>
+                    <li>
+                        <a href="#h">其他想說的事</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
     <header>
@@ -57,7 +90,7 @@
                 在設計過程中積累了許多細節處理及視覺呈現的經驗，這些能力將有助於我在前端開發中設計出具有吸引力的用戶介面。</p>
             <h4 class="sub-title">個人動機：</h4>
             <p>最近三年開始學習程式設計，並且對編寫程式充滿熱情。因為喜歡分享，曾在電腦補習班擔任Python程式設計應用班助教，協助同學解決問題並分享個人專案。
-                由於家人健康因素，我曾暫時停下工作，專心照顧父母。目前作為接案室內設計師，利用業餘時間持續學習程式，並有意在未來向前端領域發展，希望將設計與程式結合，創造具互動性和視覺衝擊的作品。</p>
+                由於家人健康因素，我曾暫時停下工作照顧家人。目前作為接案室內設計師，利用業餘時間持續學習程式，並有意在未來向前端領域發展，希望將設計與程式結合，創造具互動性和視覺衝擊的作品。</p>
             <h4 class="sub-title">為何選擇 Wehelp Bootcamp：</h4>
             <p>在台大資訊系統訓練班上過彭彭老師的課，覺得老師的教學內容豐富且具深度。而我也一直在準備轉職軟體工程師，期許自己能在Wehelp Bootcamp中有所收穫。</p>
         </div>
@@ -108,18 +141,22 @@
     <div class="content" id="f">
         <h3>關於這份申請網頁，分享一個開發時的技術心得。</h3>
         <div class="content-sub">
-            <h4 class="sub-title">宣告CSS全域變數</h4>
+            <h4 class="sub-title">RWD 設計技巧</h4>
             <p>
-                使用 :root 宣告CSS全域變數，可以有效率的調整版面設計。
+                使用 :root 宣告CSS全域變數，可以有效率的調整版面設計。<br>
+                width的值用 % 或 vw 設定，可以保持彈性。
+                
                 <pre> 
     :root{
         /* 宣告：--名稱: 值; */
         --h1-color: #ffffff;    
-        --p-color: #006;    
-        --sub-color: #ffffffb3; 
+        --color: #ffffffb3; 
+        --content-max-weight: 1200px;   
+        --content-weight: 85vw;
         --nav-color: #333;
         --nav-bg-color: #bbcf47;
         --margin-left: 64px;
+        --drop-weight: 200px;
     }
                 </pre> 
             </p>
