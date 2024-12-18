@@ -122,6 +122,8 @@ p{
     -webkit-text-fill-color: transparent
 }
 
+
+/* link-btn */
 .btn-p{
     display: flex; 
     align-items: center;
@@ -136,65 +138,66 @@ p{
     border: none;
     cursor: pointer;
     justify-content: flex-start;
-    svg{margin-left: 4px; margin-right: 8px;}
-    &:hover{background-color: var(--footer-bg-color);}
 }
+.btn-a svg{margin-left: 4px; margin-right: 8px;}
+.btn-a:hover{background-color: var(--footer-bg-color);}
 
 
 /* drop SCSS*/
-/* sass的语法 &符號 表示父級選擇器，意思與this一样*/
 .drop {
     position: relative;
     display: block;
-    width: var(--drop-weight);
-    &:hover {
-        .dropOption {display: block;}
-        .dropdown {display: block;}
-        .dropdown.close {display: none;}
-        background-color: rgb(73, 73, 73);
-        border-radius: 6px 6px 0px 0px;
-    }
-    .dropOption {
-        position: relative;
-        left: calc(var(--drop-weight) - 60px);
-        width: auto;
-        color: var(--nav-color);
-        font-weight: bold;
-        padding: 10px;
-        cursor: pointer;
-    }
-    .dropdown {
-        display: none;
-        width: var(--drop-weight);
-        position: absolute;
-        color: var(--nav-color);  
-        margin: 0; padding: 0;
-        background-color: rgb(73, 73, 73);
-        box-shadow: 0px 2px 3px 0px #2c2c2c;
-        border-radius: 0px 0px 6px 6px;
-        box-sizing: border-box;
-        overflow: auto;
-        z-index: 10;
-        li {
-            display: block;
-            margin: 0 10px; padding: 12px;
-            font-weight: bold;
-            cursor: pointer;
-            &:first-child {margin-top: 10px;}
-            &:last-child {margin-bottom: 10px;}
-            &:hover {
-                a{color: var(--nav-color);}
-                background-color: var(--nav-bg-color);
-                border-radius: 6px;
-            }
-        }
-    }
+    width: var(--drop-weight); 
 }
+.drop:hover {
+    .dropOption {display: block;}
+    .dropdown {display: block;}
+    .dropdown.close {display: none;}
+    background-color: rgb(73, 73, 73);
+    border-radius: 6px 6px 0px 0px;
+}
+
+.dropOption {
+    position: relative;
+    left: calc(var(--drop-weight) - 60px);
+    width: auto;
+    color: var(--nav-color);
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+    width: var(--drop-weight);
+    position: absolute;
+    color: var(--nav-color);  
+    margin: 0; padding: 0;
+    background-color: rgb(73, 73, 73);
+    box-shadow: 0px 2px 3px 0px #2c2c2c;
+    border-radius: 0px 0px 6px 6px;
+    box-sizing: border-box;
+    overflow: auto;
+    z-index: 10;
+}
+.dropdown li{
+    display: block;
+    margin: 0 10px; padding: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.dropdown li:first-child{margin-top: 10px;}
+.dropdown li:last-child{margin-bottom: 10px;}
+.dropdown li:hover{
+    background-color: var(--nav-bg-color);
+    border-radius: 6px;
+}
+.dropdown li:hover a{color: var(--nav-color);}
 
 
 /* RWD */
-.mod-desktop{display: flex !important;}
-.mod-mobile{display: none !important;}
+.mod-desktop{display: flex;}
+.mod-mobile{display: none;}
 
 
 /* @media 順序很重要 */
@@ -203,8 +206,8 @@ p{
     /* 平板螢幕設定 */
     /* 幕寬度小於 1250px，套用這個區塊的CSS */
     header{margin-left: calc(var(--margin-left) / 2);}
-    .mod-desktop{display: none !important;}
-    .mod-mobile{display: flex !important;}
+    .mod-desktop{display: none;}
+    .mod-mobile{display: flex;}
     .content{margin-left: calc(var(--margin-left) / 2);}
 }
 
@@ -212,8 +215,8 @@ p{
     /* 幕寬度小於 500px，套用這個區塊的CSS */
     /* 最小的手機 360px */
     header{margin-left: 20px;}
-    .mod-desktop{display: none !important;} 
-    .mod-mobile{display: flex !important;}
+    .mod-desktop{display: none;} 
+    .mod-mobile{display: flex;}
     .content{margin-left: calc(var(--margin-left) / 4);}
 }
 
