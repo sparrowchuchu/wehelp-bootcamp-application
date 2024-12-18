@@ -1,3 +1,4 @@
+
 :root{
     /* 宣告：--名稱: 值; */
     --h1-color: #ffffff;    
@@ -118,6 +119,7 @@ p{
 
 .accent{
     background: -webkit-linear-gradient(315deg,#42d392 25%,#c99320);
+    background: linear-gradient(315deg, #42d392 25%, #c99320);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent
@@ -225,3 +227,22 @@ p{
     .mod-mobile{display: flex;}
     .content{margin-left: calc(var(--margin-left) / 4);}
 }
+
+
+/* Adding support for Flexbox browsers */
+@supports (display: flex) {
+    .nav-bar, .nav-logo, .nav-lists, .btn-p {
+        display: flex;
+    }
+}
+
+/* Adding support for Grid browsers */
+@supports (display: grid) {
+    /* Add styles that use CSS Grid here if needed */
+}
+
+
+
+
+
+
