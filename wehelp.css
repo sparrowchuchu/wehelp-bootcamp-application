@@ -6,6 +6,7 @@
     --content-weight: 85vw;
     --nav-color: #333;
     --nav-bg-color: #bbcf47;
+    --footer-bg-color: #42d392;
     --font-size-sub: 16px;
     --margin-left: 64px;
     --drop-weight: 200px;
@@ -38,7 +39,7 @@ header{
 
 footer{
     height:100px; width: 100vw;
-    background-color: #42d392;
+    background-color: var(--footer-bg-color);
     padding-top: 50px;
     font-size: var(--font-size-sub);
     text-align: center;
@@ -130,13 +131,14 @@ p{
         /* height: 10px; */
         border-radius: 24px;
         background-color: var(--nav-color);
+        transition: background-color 0.25s cubic-bezier(0, 0.42, 0.2, 0.99);
         margin-left: 8px; margin-right: 16px; padding: 8px;
         font-size: var(--font-size-sub);
         border: none;
         cursor: pointer;
         justify-content: flex-start;
         svg{margin-left: 4px; margin-right: 8px;}
-        &:hover{transform: scale(1.05);}
+        &:hover{background-color: var(--footer-bg-color);}
     }
 }
 
