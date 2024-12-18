@@ -224,7 +224,6 @@ p{
 @media screen and (hover: none) {
     .mod-desktop{display: none;}
     .mod-mobile{display: none;}
-    /* nav{width:100%} */
 }
 
 
