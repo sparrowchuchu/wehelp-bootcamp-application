@@ -73,30 +73,28 @@ p{
     display: flex;
     justify-content:space-between; 
 }
-.nav-logo{
-    li{
-        min-width: 50px;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-    }
-    li:hover{transform: scale(1.1);}
+
+.nav-logo li{
+    min-width: 50px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}    
+.nav-logo li:hover{transform: scale(1.1);}
+
+.nav-lists li{
+    width: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 16px;
 }
-.nav-lists{
-    li{
-        width: 130px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        margin-right: 16px;
-        a{
-            font-weight: bold;
-            color: var(--nav-color);
-        }
-    }
-    li:hover{transform: scale(1.1);}
+.nav-lists li a{
+    font-weight: bold;
+    color: var(--nav-color);
 }
+.nav-lists li:hover{transform: scale(1.1);}
 
 
 /* content */
