@@ -221,15 +221,18 @@ p{
 }
 
 /* 當螢幕不支援 hover 行為時 (例如：觸控螢幕) */
-@media screen and (hover: none) {}
+@media screen and (hover: none) {
+    .mod-desktop{display: none;}
+    .mod-mobile{display: none;}
+}
 
 
 /* Adding support for Flexbox browsers */
-/* @supports (display: flex) {
+@supports (display: flex) {
     .nav-bar, .nav-logo, .nav-lists, .btn-p {
         display: flex;
     }
-} */
+}
 
 
 
