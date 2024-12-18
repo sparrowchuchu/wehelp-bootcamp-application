@@ -223,17 +223,11 @@ p{
 
 
 /* Adding support for Flexbox browsers */
-@supports (display: flex) {
+/* @supports (display: flex) {
     .nav-bar, .nav-logo, .nav-lists, .btn-p {
         display: flex;
     }
-}
-
-/* Adding support for Grid browsers */
-@supports (display: grid) {
-    /* Add styles that use CSS Grid here if needed */
-}
-
+} */
 
 
 
