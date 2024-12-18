@@ -227,12 +227,6 @@ p{
 }
 
 
-/* Adding support for Flexbox browsers */
-@supports (display: flex) {
-    .nav-bar, .nav-logo, .nav-lists, .btn-p {
-        display: flex;
-    }
-}
 
 
 
