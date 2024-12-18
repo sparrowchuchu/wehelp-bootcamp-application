@@ -14,7 +14,7 @@
 }
 
 body{
-    margin: 0px;
+    margin:0px; padding:0px;
     overflow-x: hidden;  /* 隱藏橫向滾動條 */
     box-sizing: border-box;
     font-size: large;
@@ -224,6 +224,7 @@ p{
 @media screen and (hover: none) {
     .mod-desktop{display: none;}
     .mod-mobile{display: none;}
+    nav{width:100%}
 }
 
 
